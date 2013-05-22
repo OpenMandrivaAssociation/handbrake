@@ -12,11 +12,22 @@ License:	GPLv2+
 Group:		Video
 URL:		http://handbrake.fr/
 Source0:	%{lname}-%{version}.tar.bz2
-BuildRequires:	yasm zlib1-devel bzip2-devel intltool svn
-BuildRequires:	iso-codes valgrind libtheora-devel gtkhtml-3.14-devel
-BuildRequires:	libnotify-devel libgstreamer0.10-plugins-base-devel
-BuildRequires:	gstreamer0.10-devel libwebkitgtk-devel 
-BuildRequires:	libgudev1.0-devel libtool
+BuildRequires:	yasm
+BuildRequires:	zlib1-devel
+BuildRequires:	bzip2-devel
+BuildRequires:	intltool
+BuildRequires:	svn
+BuildRequires:	iso-codes
+BuildRequires:	valgrind
+BuildRequires:	libtheora-devel
+BuildRequires:	gtkhtml-3.14-devel
+BuildRequires:	libnotify-devel
+BuildRequires:	libgstreamer0.10-plugins-base-devel
+BuildRequires:	gstreamer0.10-devel
+BuildRequires:	libwebkitgtk-devel 
+BuildRequires:	libgudev1.0-devel
+BuildRequires:	libtool
+BuildRequires:	pkgconfig(libass)
 
 %description
 HandBrake is an open-source, GPL-licensed, multi-platform,
