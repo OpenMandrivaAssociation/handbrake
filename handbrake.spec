@@ -29,6 +29,7 @@ BuildRequires:	pkgconfig(webkit-1.0)
 BuildRequires:	pkgconfig(gudev-1.0)
 BuildRequires:	pkgconfig(libass)
 BuildRequires:	pkgconfig(vorbis)
+BuildRequires:	pkgconfig(samplerate)
 
 %description
 HandBrake is an open-source, GPL-licensed, multi-platform,
