@@ -19,15 +19,16 @@ BuildRequires:	intltool
 BuildRequires:	svn
 BuildRequires:	iso-codes
 BuildRequires:	valgrind
-BuildRequires:	libtheora-devel
-BuildRequires:	gtkhtml-3.14-devel
-BuildRequires:	libnotify-devel
-BuildRequires:	libgstreamer0.10-plugins-base-devel
-BuildRequires:	gstreamer0.10-devel
-BuildRequires:	libwebkitgtk-devel 
-BuildRequires:	libgudev1.0-devel
 BuildRequires:	libtool
+BuildRequires:	libgstreamer0.10-plugins-base-devel
+BuildRequires:	pkgconfig(theora)
+BuildRequires:	pkgconfig(libgtkhtml-3.14)
+BuildRequires:	pkgconfig(libnotify)
+BuildRequires:	pkgconfig(gstreamer-0.10)
+BuildRequires:	pkgconfig(webkit-1.0)
+BuildRequires:	pkgconfig(gudev-1.0)
 BuildRequires:	pkgconfig(libass)
+BuildRequires:	pkgconfig(vorbis)
 
 %description
 HandBrake is an open-source, GPL-licensed, multi-platform,
