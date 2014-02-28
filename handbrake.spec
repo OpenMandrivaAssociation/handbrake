@@ -1,9 +1,11 @@
-%define lname   HandBrake
+%define _enable_debug_packages %{nil}
+%define debug_package %{nil}
+%define lname HandBrake
 
 Summary:	MPEG-AVC(H.264)/MPEG-4 converter
 Name:		handbrake
 Version:	0.9.9
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Video
 Url:		http://handbrake.fr/
@@ -35,19 +37,28 @@ MacOS X, Linux and Windows. It is a video encoder that takes
 your movies and transfers them to a format that's useful on
 your computers, media centers, and portable electronic devices.
 
+%files
+%doc AUTHORS COPYING CREDITS NEWS THANKS TRANSLATIONS
+%{_bindir}/*
+%{_datadir}/applications/*
+%{_datadir}/icons/hicolor/*/apps/hb-icon.png
+
+#----------------------------------------------------------------------------
+
 %prep
 %setup -q -n %{lname}-%{version}
 %patch0 -p1
-#fix encoding of non-utf8 files
-#doesn't work, iconv detects illegal input sequence, --silent doesn't exist anymoreq
-#iconv -t utf-8 $RPM_BUILD_DIR/%lname-%version/CREDITS
-#iconv -t utf-8 $RPM_BUILD_DIR/%lname-%version/THANKS
+
+find . -name "Makefile*" -o -name "*.m4" |xargs sed -i -e 's,configure.in,configure.ac,g'
 
 %build
 # export CFLAGS="$RPM_OPT_FLAGS"
 # export CXXFLAGS="$RPM_OPT_FLAGS"
 ./configure --prefix=%{_prefix} --launch --launch-jobs=0 --enable-ff-mpeg2
 
+pushd gtk
+autoreconf
+popd
 cd build && make
 
 %install
@@ -68,8 +79,3 @@ desktop-file-install --vendor="" \
 
 rm -rf %{buildroot}%{_datadir}/icons/hicolor/icon-theme.cache
 
-%files
-%doc AUTHORS COPYING CREDITS NEWS THANKS TRANSLATIONS
-%{_bindir}/*
-%{_datadir}/applications/*
-%{_datadir}/icons/hicolor/*/apps/hb-icon.png
