@@ -1,2 +1,4 @@
+removed_sources:
+  HandBrake-0.9.9.tar.bz2: 64414bdc425115545f7dd735c7d1e30b8b005056
 sources:
-  "HandBrake-0.9.9.tar.bz2": 64414bdc425115545f7dd735c7d1e30b8b005056
+  HandBrake-0.10.2.tar.bz2: 857c1c0c274f086424ce7863940c5ee0fd065c40
