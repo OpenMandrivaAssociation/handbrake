@@ -26,6 +26,7 @@ BuildRequires:	svn
 BuildRequires:	valgrind
 BuildRequires:	yasm
 BuildRequires:	bzip2-devel
+BuildRequires:	lame-devel
 BuildRequires:	pkgconfig(gstreamer-plugins-base-1.0)
 BuildRequires:	pkgconfig(theora)
 BuildRequires:	pkgconfig(libnotify)
