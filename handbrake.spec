@@ -36,6 +36,8 @@ BuildRequires:	pkgconfig(libass)
 BuildRequires:	pkgconfig(vorbis)
 BuildRequires:	pkgconfig(samplerate)
 BuildRequires:	pkgconfig(zlib)
+BuildRequires:	pkgconfig(x264)
+BuildRequires:	pkgconfig(x265)
 
 %description
 HandBrake is an open-source, GPL-licensed, multi-platform,
