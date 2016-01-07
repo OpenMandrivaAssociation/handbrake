@@ -31,7 +31,6 @@ BuildRequires:	pkgconfig(gstreamer-plugins-base-1.0)
 BuildRequires:	pkgconfig(theora)
 BuildRequires:	pkgconfig(libnotify)
 BuildRequires:	pkgconfig(gstreamer-1.0)
-BuildRequires:	pkgconfig(webkitgtk-3.0)
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(gudev-1.0)
 BuildRequires:	pkgconfig(libass)
@@ -74,7 +73,7 @@ cp -t download %{SOURCE7}
 %build
 # export CFLAGS="$RPM_OPT_FLAGS"
 # export CXXFLAGS="$RPM_OPT_FLAGS"
-./configure --prefix=%{_prefix} --launch --launch-jobs=0 
+./configure --prefix=%{_prefix} --launch --launch-jobs=0  --disable-gtk-update-checks
 
 pushd gtk
 autoreconf
