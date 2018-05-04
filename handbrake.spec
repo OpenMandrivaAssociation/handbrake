@@ -4,20 +4,20 @@
 
 Summary:	MPEG-AVC(H.264)/MPEG-4 converter
 Name:		handbrake
-Version:	0.10.2
-Release:	2
+Version:	1.1.0
+Release:	1
 License:	GPLv2+
 Group:		Video
 Url:		http://handbrake.fr/
-Source0:	%{lname}-%{version}.tar.bz2
+Source0:	%{lname}-%{version}.tar.gz
 
-Source1:libav-v10.1.tar.bz2
-Source2:libbluray-0.5.0.tar.bz2
-Source3:libdvdnav-5.0.1-0-gaa3659d.tar.gz
-Source4:libdvdread-5.0.0-6-gcb1ae87.tar.gz
-Source5:libvpx-v1.3.0.tar.bz2
-Source6:x265-9329-0d30d2641875-1.5.tar.bz2
-Source7:fdk-aac-v0.1.1-6-gbae4553.tar.bz2
+#Source1:libav-v10.1.tar.bz2
+#Source2:libbluray-0.5.0.tar.bz2
+#Source3:libdvdnav-5.0.1-0-gaa3659d.tar.gz
+#Source4:libdvdread-5.0.0-6-gcb1ae87.tar.gz
+#Source5:libvpx-v1.3.0.tar.bz2
+#Source6:x265-9329-0d30d2641875-1.5.tar.bz2
+#Source7:fdk-aac-v0.1.1-6-gbae4553.tar.bz2
 
 BuildRequires:	intltool
 BuildRequires:	iso-codes
@@ -37,6 +37,7 @@ BuildRequires:	pkgconfig(gudev-1.0)
 BuildRequires:	pkgconfig(libass)
 BuildRequires:	pkgconfig(vorbis)
 BuildRequires:	pkgconfig(samplerate)
+BuildRequires:  pkgconfig(webkitgtk-3.0) 
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	pkgconfig(x264)
 BuildRequires:	pkgconfig(x265)
@@ -62,14 +63,14 @@ your computers, media centers, and portable electronic devices.
 
 find . -name "Makefile*" -o -name "*.m4" |xargs sed -i -e 's,configure.in,configure.ac,g'
 
-mkdir download
-cp -t download %{SOURCE1}
-cp -t download %{SOURCE2}
-cp -t download %{SOURCE3}
-cp -t download %{SOURCE4}
-cp -t download %{SOURCE5}
-cp -t download %{SOURCE6}
-cp -t download %{SOURCE7}
+#mkdir download
+#cp -t download %{SOURCE1}
+#cp -t download %{SOURCE2}
+#cp -t download %{SOURCE3}
+#cp -t download %{SOURCE4}
+#cp -t download %{SOURCE5}
+#cp -t download %{SOURCE6}
+#cp -t download %{SOURCE7}
 
 %build
 # export CFLAGS="$RPM_OPT_FLAGS"
