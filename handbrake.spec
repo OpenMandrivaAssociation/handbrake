@@ -19,6 +19,7 @@ Source0:	%{lname}-%{version}.tar.gz
 #Source6:x265-9329-0d30d2641875-1.5.tar.bz2
 #Source7:fdk-aac-v0.1.1-6-gbae4553.tar.bz2
 
+BuildRequires:	cmake
 BuildRequires:	intltool
 BuildRequires:	iso-codes
 BuildRequires:	libtool
@@ -27,6 +28,10 @@ BuildRequires:	valgrind
 BuildRequires:	yasm
 BuildRequires:	bzip2-devel
 BuildRequires:	lame-devel
+BuildRequires:  jansson-devel
+BuildRequires:  pkgconfig(gthread-2.0
+BuildRequires:	ffmpeg-devel
+BuildRequires:	pkgconfig(gstreamer-%{gstapi})
 BuildRequires:	pkgconfig(gstreamer-plugins-base-1.0)
 BuildRequires:	pkgconfig(theora)
 BuildRequires:	pkgconfig(libnotify)
@@ -37,6 +42,7 @@ BuildRequires:	pkgconfig(gudev-1.0)
 BuildRequires:	pkgconfig(libass)
 BuildRequires:	pkgconfig(vorbis)
 BuildRequires:	pkgconfig(samplerate)
+BuildRequires:	pkgconfig(webkit-1.0)
 BuildRequires:  pkgconfig(webkitgtk-3.0) 
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	pkgconfig(x264)
