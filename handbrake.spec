@@ -29,7 +29,7 @@ BuildRequires:	yasm
 BuildRequires:	bzip2-devel
 BuildRequires:	lame-devel
 BuildRequires:  jansson-devel
-BuildRequires:  pkgconfig(gthread-2.0
+#BuildRequires:  pkgconfig(gthread-2.0
 BuildRequires:	ffmpeg-devel
 %BuildRequires:	pkgconfig(gstreamer-%{gstapi})
 BuildRequires:	pkgconfig(gstreamer-plugins-base-1.0)
