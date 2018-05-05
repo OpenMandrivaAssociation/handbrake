@@ -9,7 +9,7 @@ Release:	1
 License:	GPLv2+
 Group:		Video
 Url:		http://handbrake.fr/
-Source0:	%{lname}-%{version}.tar.gz
+Source0:	%{lname}-%{version}-source.tar.bz2
 
 #Source1:libav-v10.1.tar.bz2
 #Source2:libbluray-0.5.0.tar.bz2
