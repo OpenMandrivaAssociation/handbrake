@@ -1,7 +1,7 @@
 removed_sources:
   HandBrake-0.9.9.tar.bz2: 64414bdc425115545f7dd735c7d1e30b8b005056
 sources:
-  HandBrake-1.1.0.tar.gz: 9cb582c1ff17610f2430aa3faf16172e248979e9
+  HandBrake-1.1.0-source.tar.bz2: b73a53b50b2c18709e570725e21557e49d8f5756
   fdk-aac-v0.1.1-6-gbae4553.tar.bz2: e15a3f6995e62c8ceb13557ba454e4b5fb3852bc
   libav-v10.1.tar.bz2: 67a5f4c74f2092e8c8d5025fc598d5f34713d25e
   libbluray-0.5.0.tar.bz2: fb01834ef31710afae399d7e631d236bfe5bec79
