@@ -56,7 +56,7 @@ your movies and transfers them to a format that's useful on
 your computers, media centers, and portable electronic devices.
 
 %files -f ghb.lang
-%doc AUTHORS COPYING CREDITS NEWS THANKS TRANSLATIONS
+%doc COPYING
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_datadir}/icons/hicolor/*/apps/hb-icon.*
@@ -68,7 +68,7 @@ your computers, media centers, and portable electronic devices.
 %apply_patches
 
 find . -name "Makefile*" -o -name "*.m4" |xargs sed -i -e 's,configure.in,configure.ac,g'
-
+# No need anymore.
 #mkdir download
 #cp -t download %{SOURCE1}
 #cp -t download %{SOURCE2}
