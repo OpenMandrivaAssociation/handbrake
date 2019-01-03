@@ -4,19 +4,20 @@
 
 Summary:	MPEG-AVC(H.264)/MPEG-4 converter
 Name:		handbrake
-Version:	1.1.1
+Version:	1.2.0
 Release:	1
 License:	GPLv2+
 Group:		Video
 Url:		http://handbrake.fr/
 Source0:	https://download.handbrake.fr/releases/%{version}/%{lname}-%{version}-source.tar.bz2
 
-Source1:	libav-12.3.tar.gz
+# Handbrake switch from libav to ffmpeg, so disable it.
+#Source1:	libav-12.3.tar.gz
 Source2:	libbluray-1.0.2.tar.bz2
 Source3:	libdvdnav-5.0.3.tar.bz2
 Source4:	libdvdread-5.0.3.tar.bz2
 Source5:	libvpx-1.7.0.tar.gz
-Source6:	x265_2.6.tar.gz
+Source6:	x265_2.9.tar.gz
 
 BuildRequires:	cmake
 BuildRequires:	intltool
@@ -27,6 +28,7 @@ BuildRequires:	valgrind
 BuildRequires:	yasm
 BuildRequires:	bzip2-devel
 BuildRequires:	lame-devel
+BuildRequires:  nasm
 BuildRequires:  pkgconfig(jansson)
 #BuildRequires:  pkgconfig(gthread-2.0
 BuildRequires:	ffmpeg-devel
@@ -34,12 +36,14 @@ BuildRequires:	ffmpeg-devel
 BuildRequires:	pkgconfig(gstreamer-plugins-base-1.0)
 BuildRequires:	pkgconfig(theora)
 BuildRequires:	pkgconfig(libnotify)
+BuildRequires:  pkgconfig(liblzma)
 BuildRequires:	pkgconfig(gstreamer-1.0)
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(gudev-1.0)
 BuildRequires:	pkgconfig(libass)
 BuildRequires:	pkgconfig(opus)
+BuildRequires:  pkgconfig(speex)
 BuildRequires:	pkgconfig(vorbis)
 BuildRequires:	pkgconfig(samplerate)
 BuildRequires:	pkgconfig(zlib)
@@ -68,7 +72,7 @@ your computers, media centers, and portable electronic devices.
 
 find . -name "Makefile*" -o -name "*.m4" |xargs sed -i -e 's,configure.in,configure.ac,g'
 mkdir download
-cp -t download %{SOURCE1}
+#cp -t download %{SOURCE1}
 cp -t download %{SOURCE2}
 cp -t download %{SOURCE3}
 cp -t download %{SOURCE4}
