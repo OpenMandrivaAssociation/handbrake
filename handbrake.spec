@@ -101,7 +101,7 @@ pushd %{buildroot}%{_bindir}
 ln -s ./HandBrakeCLI ./handbrake
 popd
 
-sed -i -e "s|hb-icon|hb-icon.png|" %{buildroot}%{_datadir}/applications/ghb.desktop
+#sed -i -e "s|hb-icon|hb-icon.png|" %{buildroot}%{_datadir}/applications/ghb.desktop
 
 desktop-file-install --vendor="" \
   --remove-category="Application" \
