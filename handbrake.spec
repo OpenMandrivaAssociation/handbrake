@@ -15,8 +15,8 @@ Source0:	https://download.handbrake.fr/releases/%{version}/%{lname}-%{version}-s
 # Use non-system ffmpeg, because currently we have 4.0.X, and needed is 4.1. (penguin)
 Source1:	ffmpeg-4.1.tar.bz2
 Source2:	libbluray-1.0.2.tar.bz2
-Source3:	libdvdnav-5.0.3.tar.bz2
-Source4:	libdvdread-5.0.3.tar.bz2
+Source3:	libdvdnav-6.0.0.tar.bz2
+Source4:	libdvdread-6.0.0.tar.bz2
 Source5:	libvpx-1.7.0.tar.gz
 Source6:	x265_2.9.tar.gz
 Source7:  nv-codec-headers-8.1.24.2.tar.gz
