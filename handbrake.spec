@@ -4,19 +4,22 @@
 
 Summary:	MPEG-AVC(H.264)/MPEG-4 converter
 Name:		handbrake
-Version:	1.1.1
+Version:	1.2.0
 Release:	1
 License:	GPLv2+
 Group:		Video
 Url:		http://handbrake.fr/
 Source0:	https://download.handbrake.fr/releases/%{version}/%{lname}-%{version}-source.tar.bz2
 
-Source1:	libav-12.3.tar.gz
+# Handbrake switch from libav to ffmpeg, so replace it.
+# Use non-system ffmpeg, because currently we have 4.0.X, and needed is 4.1. (penguin)
+Source1:	ffmpeg-4.1.tar.bz2
 Source2:	libbluray-1.0.2.tar.bz2
-Source3:	libdvdnav-5.0.3.tar.bz2
-Source4:	libdvdread-5.0.3.tar.bz2
+Source3:	libdvdnav-6.0.0.tar.bz2
+Source4:	libdvdread-6.0.0.tar.bz2
 Source5:	libvpx-1.7.0.tar.gz
-Source6:	x265_2.6.tar.gz
+Source6:	x265_2.9.tar.gz
+Source7:  nv-codec-headers-8.1.24.2.tar.gz
 
 BuildRequires:	cmake
 BuildRequires:	intltool
@@ -27,19 +30,23 @@ BuildRequires:	valgrind
 BuildRequires:	yasm
 BuildRequires:	bzip2-devel
 BuildRequires:	lame-devel
+BuildRequires:  nasm
 BuildRequires:  pkgconfig(jansson)
 #BuildRequires:  pkgconfig(gthread-2.0
-BuildRequires:	ffmpeg-devel
+#BuildRequires:	ffmpeg-devel
 #BuildRequires:	pkgconfig(gstreamer-%{gstapi})
 BuildRequires:	pkgconfig(gstreamer-plugins-base-1.0)
 BuildRequires:	pkgconfig(theora)
 BuildRequires:	pkgconfig(libnotify)
+BuildRequires:  pkgconfig(liblzma)
 BuildRequires:	pkgconfig(gstreamer-1.0)
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(gudev-1.0)
 BuildRequires:	pkgconfig(libass)
+BuildRequires:  pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(opus)
+BuildRequires:  pkgconfig(speex)
 BuildRequires:	pkgconfig(vorbis)
 BuildRequires:	pkgconfig(samplerate)
 BuildRequires:	pkgconfig(zlib)
@@ -58,6 +65,7 @@ your computers, media centers, and portable electronic devices.
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_datadir}/icons/hicolor/*/apps/hb-icon.*
+%{_iconsdir}/hicolor/scalable/apps/fr.handbrake.ghb.svg
 %{_datadir}/metainfo/fr.handbrake.ghb.appdata.xml
 
 #----------------------------------------------------------------------------
@@ -74,6 +82,7 @@ cp -t download %{SOURCE3}
 cp -t download %{SOURCE4}
 cp -t download %{SOURCE5}
 cp -t download %{SOURCE6}
+cp -t download %{SOURCE7}
 
 %build
 # export CFLAGS="$RPM_OPT_FLAGS"
@@ -93,7 +102,7 @@ pushd %{buildroot}%{_bindir}
 ln -s ./HandBrakeCLI ./handbrake
 popd
 
-sed -i -e "s|hb-icon|hb-icon.png|" %{buildroot}%{_datadir}/applications/ghb.desktop
+#sed -i -e "s|hb-icon|hb-icon.png|" %{buildroot}%{_datadir}/applications/ghb.desktop
 
 desktop-file-install --vendor="" \
   --remove-category="Application" \
