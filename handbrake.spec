@@ -19,6 +19,7 @@ Source3:	libdvdnav-5.0.3.tar.bz2
 Source4:	libdvdread-5.0.3.tar.bz2
 Source5:	libvpx-1.7.0.tar.gz
 Source6:	x265_2.9.tar.gz
+Source7:  nv-codec-headers-8.1.24.2.tar.gz
 
 BuildRequires:	cmake
 BuildRequires:	intltool
@@ -79,6 +80,7 @@ cp -t download %{SOURCE3}
 cp -t download %{SOURCE4}
 cp -t download %{SOURCE5}
 cp -t download %{SOURCE6}
+cp -t download %{SOURCE7}
 
 %build
 # export CFLAGS="$RPM_OPT_FLAGS"
