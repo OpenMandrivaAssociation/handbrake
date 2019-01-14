@@ -84,9 +84,13 @@ cp -t download %{SOURCE5}
 cp -t download %{SOURCE6}
 cp -t download %{SOURCE7}
 
+# Copied from libvpx, in particular that avoids using neon/soft abi on armv7hl
+%ifarch %{ix86}
+%global vpxtarget x86-linux-gcc
+
 %build
-export CC=gcc
-export CXX=g++
+#export CC=gcc
+#export CXX=g++
 # export CFLAGS="$RPM_OPT_FLAGS"
 # export CXXFLAGS="$RPM_OPT_FLAGS"
 ./configure --prefix=%{_prefix} --launch --launch-jobs=0  --disable-gtk-update-checks
