@@ -87,6 +87,7 @@ cp -t download %{SOURCE7}
 # Copied from libvpx, in particular that avoids using neon/soft abi on armv7hl
 %ifarch %{ix86}
 %global vpxtarget x86-linux-gcc
+%endif
 
 %build
 #export CC=gcc
