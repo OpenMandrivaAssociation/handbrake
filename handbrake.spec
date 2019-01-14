@@ -85,6 +85,8 @@ cp -t download %{SOURCE6}
 cp -t download %{SOURCE7}
 
 %build
+export CC=gcc
+export CXX=g++
 # export CFLAGS="$RPM_OPT_FLAGS"
 # export CXXFLAGS="$RPM_OPT_FLAGS"
 ./configure --prefix=%{_prefix} --launch --launch-jobs=0  --disable-gtk-update-checks
