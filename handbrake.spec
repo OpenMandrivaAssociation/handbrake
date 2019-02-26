@@ -4,7 +4,7 @@
 
 Summary:	MPEG-AVC(H.264)/MPEG-4 converter
 Name:		handbrake
-Version:	1.2.0
+Version:	1.2.2
 Release:	1
 License:	GPLv2+
 Group:		Video
