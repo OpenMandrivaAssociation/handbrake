@@ -1,0 +1,60 @@
+From 3b33632d429df61c4ba0b139a7c6e2e7840ae315 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jani=20V=C3=A4limaa?= <wally@mageia.org>
+Date: Thu, 28 Feb 2019 14:24:40 +0000
+Subject: [PATCH] Don't build x265 10/12bit
+
+---
+ contrib/x265/module.defs      | 6 ++----
+ contrib/x265_8bit/module.defs | 2 +-
+ make/include/main.defs        | 2 --
+ 3 files changed, 3 insertions(+), 7 deletions(-)
+
+diff --git a/contrib/x265/module.defs b/contrib/x265/module.defs
+index 8b8b241..bc7cad6 100644
+--- a/contrib/x265/module.defs
++++ b/contrib/x265/module.defs
+@@ -1,4 +1,4 @@
+-__deps__ := X265_8 X265_10 X265_12
++__deps__ := X265_8
+ $(eval $(call import.MODULE.defs,X265,x265,$(__deps__)))
+ $(eval $(call import.CONTRIB.defs,X265))
+ 
+@@ -38,9 +38,7 @@ X265.CONFIGURE = $(TOUCH.exe) $@
+ X265.BUILD = $(TOUCH.exe) $@
+ 
+ X265.SOURCE.libs = \
+-	$(X265.BUILD.dir)/8bit/libx265_main.a \
+-	$(X265.BUILD.dir)/10bit/libx265_main10.a \
+-	$(X265.BUILD.dir)/12bit/libx265_main12.a
++	$(X265.BUILD.dir)/8bit/libx265_main.a
+ 
+ ifeq (1-mingw,$(BUILD.cross)-$(BUILD.system))
+     X265.O.ext = .obj
+diff --git a/contrib/x265_8bit/module.defs b/contrib/x265_8bit/module.defs
+index 3733574..c6a744f 100644
+--- a/contrib/x265_8bit/module.defs
++++ b/contrib/x265_8bit/module.defs
+@@ -14,7 +14,7 @@ X265_8.CONFIGURE.args.prefix = -DCMAKE_INSTALL_PREFIX="$(X265_8.CONFIGURE.prefix
+ X265_8.CONFIGURE.deps        =
+ X265_8.CONFIGURE.static      =
+ X265_8.CONFIGURE.shared      = -DENABLE_SHARED=OFF
+-X265_8.CONFIGURE.extra       = -DENABLE_CLI=OFF -DHIGH_BIT_DEPTH=OFF -DENABLE_LIBNUMA=OFF -DEXTRA_LIB="x265_main10.a;x265_main12.a" -DEXTRA_LINK_FLAGS=-L. -DLINKED_10BIT=ON -DLINKED_12BIT=ON
++X265_8.CONFIGURE.extra       = -DENABLE_CLI=OFF -DHIGH_BIT_DEPTH=OFF -DENABLE_LIBNUMA=OFF -DEXTRA_LINK_FLAGS=-L. -DLINKED_10BIT=OFF -DLINKED_12BIT=OFF
+ 
+ ifneq (none,$(X265_8.GCC.g))
+     X265_8.CONFIGURE.extra += -DCMAKE_BUILD_TYPE=Debug
+diff --git a/make/include/main.defs b/make/include/main.defs
+index d56b752..a26dcd0 100644
+--- a/make/include/main.defs
++++ b/make/include/main.defs
+@@ -44,8 +44,6 @@ endif
+ ifeq (1,$(FEATURE.x265))
+     MODULES += contrib/x265
+     MODULES += contrib/x265_8bit
+-    MODULES += contrib/x265_10bit
+-    MODULES += contrib/x265_12bit
+ endif
+ 
+ MODULES += contrib/ffmpeg
+-- 
+2.21.0
