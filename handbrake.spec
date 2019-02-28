@@ -21,7 +21,9 @@ Source5:	libvpx-1.7.0.tar.gz
 Source6:	x265_2.9.tar.gz
 Source7:  nv-codec-headers-8.1.24.2.tar.gz
 
+# Source100 and patch0 for fix build on i686.
 Source100:  linking-issue-on-non-x86-platform.patch
+Patch0: 0001-Don-t-build-x265-10-12bit.patch
 
 BuildRequires:	cmake
 BuildRequires:	intltool
@@ -74,7 +76,9 @@ your computers, media centers, and portable electronic devices.
 
 %prep
 %setup -q -n %{lname}-%{version}
-%apply_patches
+%ifarch %ix86
+%patch0 -p1 -b .x265-no-10bit-12bit
+%endif
 
 find . -name "Makefile*" -o -name "*.m4" |xargs sed -i -e 's,configure.in,configure.ac,g'
 mkdir download
