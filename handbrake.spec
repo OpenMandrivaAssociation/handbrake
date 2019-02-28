@@ -21,6 +21,8 @@ Source5:	libvpx-1.7.0.tar.gz
 Source6:	x265_2.9.tar.gz
 Source7:  nv-codec-headers-8.1.24.2.tar.gz
 
+Source100:  linking-issue-on-non-x86-platform.patch
+
 BuildRequires:	cmake
 BuildRequires:	intltool
 BuildRequires:	iso-codes
