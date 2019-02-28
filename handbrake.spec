@@ -84,6 +84,9 @@ cp -t download %{SOURCE5}
 cp -t download %{SOURCE6}
 cp -t download %{SOURCE7}
 
+#import to fix i686 build
+%{__cp} -a %{SOURCE100} contrib/x265/A99-linking-issue-on-non-x86-platform.patch
+
 %build
 # export CFLAGS="$RPM_OPT_FLAGS"
 # export CXXFLAGS="$RPM_OPT_FLAGS"
