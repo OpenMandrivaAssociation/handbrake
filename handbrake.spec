@@ -24,7 +24,7 @@ Source6:	x265_3.2.1.tar.gz
 
 # Source100 and patch0 for fix build on i686.
 Source100:  linking-issue-on-non-x86-platform.patch
-Patch0: 0001-Don-t-build-x265-10-12bit.patch
+#Patch0: 0001-Don-t-build-x265-10-12bit.patch
 
 BuildRequires:  meson
 BuildRequires:  autoconf
@@ -86,9 +86,9 @@ your computers, media centers, and portable electronic devices.
 
 %prep
 %setup -q -n %{lname}-%{version}
-%ifarch %ix86
-%patch0 -p1 -b .x265-no-10bit-12bit
-%endif
+#ifarch %ix86
+#patch0 -p1 -b .x265-no-10bit-12bit
+#endif
 
 find . -name "Makefile*" -o -name "*.m4" |xargs sed -i -e 's,configure.in,configure.ac,g'
 mkdir download
