@@ -23,7 +23,7 @@ Source6:	x265_3.2.1.tar.gz
 #Source7:  nv-codec-headers-9.0.18.1.tar.gz
 
 # Source100 and patch0 for fix build on i686.
-Source100:  linking-issue-on-non-x86-platform.patch
+#Source100:  linking-issue-on-non-x86-platform.patch
 #Patch0: 0001-Don-t-build-x265-10-12bit.patch
 
 BuildRequires:  meson
@@ -101,7 +101,7 @@ cp -t download %{SOURCE6}
 #cp -t download %{SOURCE7}
 
 #import to fix i686 build
-%{__cp} -a %{SOURCE100} contrib/x265/A99-linking-issue-on-non-x86-platform.patch
+#{__cp} -a %{SOURCE100} contrib/x265/A99-linking-issue-on-non-x86-platform.patch
 
 %build
 # export CFLAGS="$RPM_OPT_FLAGS"
