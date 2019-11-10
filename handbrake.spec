@@ -20,7 +20,7 @@ Source3:	libdvdnav-6.0.1.tar.bz2
 Source4:	libdvdread-6.0.2.tar.bz2
 Source5:	libvpx-1.8.1.tar.gz
 Source6:	x265_3.2.1.tar.gz
-Source7:  nv-codec-headers-9.0.18.1.tar.gz
+#Source7:  nv-codec-headers-9.0.18.1.tar.gz
 
 # Source100 and patch0 for fix build on i686.
 Source100:  linking-issue-on-non-x86-platform.patch
@@ -64,6 +64,7 @@ BuildRequires:	pkgconfig(samplerate)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	pkgconfig(x264)
 BuildRequires:	pkgconfig(x265)
+BuildRequires:  pkgconfig(ffnvcodec)
 
 %description
 HandBrake is an open-source, GPL-licensed, multi-platform,
