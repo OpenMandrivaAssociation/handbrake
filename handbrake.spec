@@ -26,8 +26,13 @@ Source7:  nv-codec-headers-9.0.18.1.tar.gz
 Source100:  linking-issue-on-non-x86-platform.patch
 Patch0: 0001-Don-t-build-x265-10-12bit.patch
 
+BuildRequires:  meson
+BuildRequires:  autoconf
+BuildRequires:  automake
 BuildRequires:	cmake
 BuildRequires:	intltool
+BuildRequires:  libtool
+BuildRequires:  m4
 BuildRequires:	iso-codes
 BuildRequires:	libtool
 BuildRequires:	svn
