@@ -36,6 +36,7 @@ BuildRequires:	yasm
 BuildRequires:	bzip2-devel
 BuildRequires:	lame-devel
 BuildRequires:  nasm
+BuildRequires:  python-devel
 BuildRequires:  pkgconfig(jansson)
 #BuildRequires:  pkgconfig(gthread-2.0
 #BuildRequires:	ffmpeg-devel
