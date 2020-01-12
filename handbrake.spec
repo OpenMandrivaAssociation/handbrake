@@ -22,6 +22,7 @@ Source4:	libdvdread-6.0.2.tar.bz2
 Source6:	x265_3.2.1.tar.gz
 #Source7:  nv-codec-headers-9.0.18.1.tar.gz
 Source8:  AMF-1.4.9.tar.gz
+Source9:  mfx_dispatch-c200d83.tar.gz
 
 # Source100 and patch0 for fix build on i686.
 #Source100:  linking-issue-on-non-x86-platform.patch
@@ -52,6 +53,7 @@ BuildRequires:	pkgconfig(theora)
 BuildRequires:	pkgconfig(libnotify)
 BuildRequires:  pkgconfig(liblzma)
 BuildRequires:  pkgconfig(numa)
+BuildRequires:  pkgconfig(fdk-aac)
 BuildRequires:	pkgconfig(gstreamer-1.0)
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(gtk+-3.0)
@@ -67,6 +69,8 @@ BuildRequires:	pkgconfig(x264)
 BuildRequires:	pkgconfig(x265)
 BuildRequires:  pkgconfig(ffnvcodec)
 BuildRequires:  pkgconfig(vpx)
+# Not packaged yet in OMV, until is still missing, we bundle it from handbrake
+#BuildRequires:  pkgconfig(libmfx)
 
 %description
 HandBrake is an open-source, GPL-licensed, multi-platform,
@@ -101,6 +105,7 @@ cp -t download %{SOURCE4}
 cp -t download %{SOURCE6}
 #cp -t download %{SOURCE7}
 cp -t download %{SOURCE8}
+cp -t download %{SOURCE9}
 
 #import to fix i686 build
 #{__cp} -a %{SOURCE100} contrib/x265/A99-linking-issue-on-non-x86-platform.patch
@@ -108,7 +113,7 @@ cp -t download %{SOURCE8}
 %build
 # export CFLAGS="$RPM_OPT_FLAGS"
 # export CXXFLAGS="$RPM_OPT_FLAGS"
-./configure --prefix=%{_prefix} --launch --launch-jobs=0  --disable-gtk-update-checks --enable-vce
+./configure --prefix=%{_prefix} --launch --launch-jobs=0  --disable-gtk-update-checks --enable-vce --enable-qsv
 
 pushd gtk
 autoreconf
