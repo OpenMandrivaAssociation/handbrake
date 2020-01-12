@@ -1,9 +1,9 @@
 sources:
-  HandBrake-1.3.0-source.tar.bz2: 1af6cee51d09d3e5207446d811765d7ddf6df0dd
+  HandBrake-1.3.1-source.tar.bz2: 213da9cebb19215d6e7ea49ac390ecc9cb6c749f
   libbluray-1.1.2.tar.bz2: 3885c0d0bd0f04a3a372ceec3a01a44a7624f272
   libdvdnav-6.0.1.tar.bz2: 258b82156e13803f2b0dbaec74e15475b4341d2f
   libdvdread-6.0.2.tar.bz2: a3d4b85cbe52b11cff7587ed010fa38ce512fd95
   libvpx-1.8.1.tar.gz: 6c9a55e1f92d7301383f387486bb574f22faf855
   x265_3.2.1.tar.gz: 0bd4889ff3ad596372ce2338f2d896947a2eec53
-  ffmpeg-4.2.1.tar.bz2: ab56e8b8fcaced4a85cebf425bfadfb4ceb71e27
+  ffmpeg-4.2.2.tar.bz2: 77c9724bde4c6e3ef21ab954c0572ac45e61c3e5
   nv-codec-headers-9.0.18.1.tar.gz: 9142b2695c39e4c870ae1db6f901bbdee391837c'
