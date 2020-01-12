@@ -6,4 +6,5 @@ sources:
   libvpx-1.8.1.tar.gz: 6c9a55e1f92d7301383f387486bb574f22faf855
   x265_3.2.1.tar.gz: 0bd4889ff3ad596372ce2338f2d896947a2eec53
   ffmpeg-4.2.2.tar.bz2: 77c9724bde4c6e3ef21ab954c0572ac45e61c3e5
-  nv-codec-headers-9.0.18.1.tar.gz: 9142b2695c39e4c870ae1db6f901bbdee391837c'
+  nv-codec-headers-9.0.18.1.tar.gz: 9142b2695c39e4c870ae1db6f901bbdee391837c
+  AMF-1.4.9.tar.gz: 11aaa2b738fd807cfc9a8b30c8d91a29bb81fa0c
