@@ -21,6 +21,7 @@ Source4:	libdvdread-6.0.2.tar.bz2
 #Source5:	libvpx-1.8.1.tar.gz
 Source6:	x265_3.2.1.tar.gz
 #Source7:  nv-codec-headers-9.0.18.1.tar.gz
+Source8:  AMF-1.4.9.tar.gz
 
 # Source100 and patch0 for fix build on i686.
 #Source100:  linking-issue-on-non-x86-platform.patch
@@ -99,6 +100,7 @@ cp -t download %{SOURCE4}
 #cp -t download %{SOURCE5}
 cp -t download %{SOURCE6}
 #cp -t download %{SOURCE7}
+cp -t download %{SOURCE8}
 
 #import to fix i686 build
 #{__cp} -a %{SOURCE100} contrib/x265/A99-linking-issue-on-non-x86-platform.patch
@@ -111,10 +113,10 @@ cp -t download %{SOURCE6}
 pushd gtk
 autoreconf
 popd
-cd build && make
+cd build && make_build
 
 %install
-%makeinstall_std -C build
+%make_install -C build
 
 install -m 0755 build/HandBrakeCLI %{buildroot}%{_bindir}/HandBrakeCLI
 pushd %{buildroot}%{_bindir}
