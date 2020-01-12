@@ -4,7 +4,7 @@
 
 Summary:	MPEG-AVC(H.264)/MPEG-4 converter
 Name:		handbrake
-Version:	1.3.0
+Version:	1.3.1
 Release:	1
 License:	GPLv2+
 Group:		Video
@@ -13,14 +13,16 @@ Source0:	https://download.handbrake.fr/releases/%{version}/%{lname}-%{version}-s
 
 # Handbrake switch from libav to ffmpeg, so replace it.
 # Use non-system ffmpeg, because currently we have 4.0.X, and needed is 4.1. (penguin)
-# as of 1.3.0 - bundle ffmpeg support more features than previded by omv.
-Source1:	ffmpeg-4.2.1.tar.bz2
+# as of 1.3.0 - bundle ffmpeg support more features than provided by omv.
+Source1:	ffmpeg-4.2.2.tar.bz2
 Source2:	libbluray-1.1.2.tar.bz2
 Source3:	libdvdnav-6.0.1.tar.bz2
 Source4:	libdvdread-6.0.2.tar.bz2
 #Source5:	libvpx-1.8.1.tar.gz
 Source6:	x265_3.2.1.tar.gz
 #Source7:  nv-codec-headers-9.0.18.1.tar.gz
+Source8:  AMF-1.4.9.tar.gz
+Source9:  mfx_dispatch-c200d83.tar.gz
 
 # Source100 and patch0 for fix build on i686.
 #Source100:  linking-issue-on-non-x86-platform.patch
@@ -48,9 +50,11 @@ BuildRequires:  pkgconfig(jansson)
 #BuildRequires:	pkgconfig(gstreamer-%{gstapi})
 BuildRequires:	pkgconfig(gstreamer-plugins-base-1.0)
 BuildRequires:	pkgconfig(theora)
+BuildRequires:  pkgconfig(libdrm)
 BuildRequires:	pkgconfig(libnotify)
 BuildRequires:  pkgconfig(liblzma)
 BuildRequires:  pkgconfig(numa)
+BuildRequires:  pkgconfig(fdk-aac)
 BuildRequires:	pkgconfig(gstreamer-1.0)
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(gtk+-3.0)
@@ -66,6 +70,9 @@ BuildRequires:	pkgconfig(x264)
 BuildRequires:	pkgconfig(x265)
 BuildRequires:  pkgconfig(ffnvcodec)
 BuildRequires:  pkgconfig(vpx)
+BuildRequires:  pkgconfig(libva)
+# Not packaged yet in OMV, until is still missing, we bundle it from handbrake
+#BuildRequires:  pkgconfig(libmfx)
 
 %description
 HandBrake is an open-source, GPL-licensed, multi-platform,
@@ -99,6 +106,8 @@ cp -t download %{SOURCE4}
 #cp -t download %{SOURCE5}
 cp -t download %{SOURCE6}
 #cp -t download %{SOURCE7}
+cp -t download %{SOURCE8}
+cp -t download %{SOURCE9}
 
 #import to fix i686 build
 #{__cp} -a %{SOURCE100} contrib/x265/A99-linking-issue-on-non-x86-platform.patch
@@ -106,7 +115,7 @@ cp -t download %{SOURCE6}
 %build
 # export CFLAGS="$RPM_OPT_FLAGS"
 # export CXXFLAGS="$RPM_OPT_FLAGS"
-./configure --prefix=%{_prefix} --launch --launch-jobs=0  --disable-gtk-update-checks
+./configure --prefix=%{_prefix} --launch --launch-jobs=0  --disable-gtk-update-checks --enable-vce --enable-qsv
 
 pushd gtk
 autoreconf
@@ -114,7 +123,7 @@ popd
 cd build && make
 
 %install
-%makeinstall_std -C build
+%make_install -C build
 
 install -m 0755 build/HandBrakeCLI %{buildroot}%{_bindir}/HandBrakeCLI
 pushd %{buildroot}%{_bindir}
