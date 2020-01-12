@@ -4,7 +4,7 @@
 
 Summary:	MPEG-AVC(H.264)/MPEG-4 converter
 Name:		handbrake
-Version:	1.3.0
+Version:	1.3.1
 Release:	1
 License:	GPLv2+
 Group:		Video
@@ -13,8 +13,8 @@ Source0:	https://download.handbrake.fr/releases/%{version}/%{lname}-%{version}-s
 
 # Handbrake switch from libav to ffmpeg, so replace it.
 # Use non-system ffmpeg, because currently we have 4.0.X, and needed is 4.1. (penguin)
-# as of 1.3.0 - bundle ffmpeg support more features than previded by omv.
-Source1:	ffmpeg-4.2.1.tar.bz2
+# as of 1.3.0 - bundle ffmpeg support more features than provided by omv.
+Source1:	ffmpeg-4.2.2.tar.bz2
 Source2:	libbluray-1.1.2.tar.bz2
 Source3:	libdvdnav-6.0.1.tar.bz2
 Source4:	libdvdread-6.0.2.tar.bz2
