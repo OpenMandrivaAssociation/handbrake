@@ -113,7 +113,7 @@ cp -t download %{SOURCE8}
 pushd gtk
 autoreconf
 popd
-cd build && make_build
+cd build && make
 
 %install
 %make_install -C build
