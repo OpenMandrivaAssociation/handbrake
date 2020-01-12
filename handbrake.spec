@@ -69,6 +69,7 @@ BuildRequires:	pkgconfig(x264)
 BuildRequires:	pkgconfig(x265)
 BuildRequires:  pkgconfig(ffnvcodec)
 BuildRequires:  pkgconfig(vpx)
+BuildRequires:  pkgconfig(libva)
 # Not packaged yet in OMV, until is still missing, we bundle it from handbrake
 #BuildRequires:  pkgconfig(libmfx)
 
