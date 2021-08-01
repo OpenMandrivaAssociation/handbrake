@@ -22,7 +22,7 @@ Source4:	libdvdread-6.1.1.tar.bz2
 Source6:	x265_3.5.tar.gz
 #Source7:  nv-codec-headers-9.0.18.1.tar.gz
 Source8:  AMF-1.4.18.tar.gz
-Source9:  mfx_dispatch-1.35
+Source9:  mfx_dispatch-1.35.rar.gz
 
 # Source100 and patch0 for fix build on i686.
 #Source100:  linking-issue-on-non-x86-platform.patch
