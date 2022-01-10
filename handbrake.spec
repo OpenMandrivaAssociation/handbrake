@@ -119,7 +119,7 @@ cp -t download %{SOURCE8}
 %build
 # export CFLAGS="$RPM_OPT_FLAGS"
 # export CXXFLAGS="$RPM_OPT_FLAGS"
-./configure --prefix=%{_prefix} --launch --launch-jobs=0  --disable-gtk-update-checks --enable-vce --enable-qsv --enable-FDK-AAC
+./configure --prefix=%{_prefix} --launch --launch-jobs=0 --disable-gtk-update-checks --enable-vce --enable-qsv --enable-FDK-AAC
 
 pushd gtk
 autoreconf
