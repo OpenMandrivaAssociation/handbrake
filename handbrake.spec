@@ -1,6 +1,9 @@
 #define _enable_debug_packages %{nil}
 #define debug_package %{nil}
 %define _empty_manifest_terminate_build 0
+
+%define _disable_lto 1
+
 %define lname HandBrake
 
 Summary:	MPEG-AVC(H.264)/MPEG-4 converter
