@@ -24,7 +24,7 @@ Source6:	x265_3.5.tar.gz
 #Source7:  nv-codec-headers-9.0.18.1.tar.gz
 Source8:  AMF-1.4.18.tar.gz
 #Source9:  mfx_dispatch-1.35.tar.gz
-Source10: https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs/oneVPL-2021.6.0.tar.gz
+#Source10: https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs/oneVPL-2021.6.0.tar.gz
 
 # Source100 and patch0 for fix build on i686.
 #Source100:  linking-issue-on-non-x86-platform.patch
@@ -113,7 +113,7 @@ cp -t download %{SOURCE6}
 #cp -t download %{SOURCE7}
 cp -t download %{SOURCE8}
 #cp -t download %{SOURCE9}
-cp -t download %{SOURCE10}
+#cp -t download %{SOURCE10}
 
 #import to fix i686 build
 #{__cp} -a %{SOURCE100} contrib/x265/A99-linking-issue-on-non-x86-platform.patch
