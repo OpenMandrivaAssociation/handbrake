@@ -1,11 +1,14 @@
 #define _enable_debug_packages %{nil}
 #define debug_package %{nil}
 %define _empty_manifest_terminate_build 0
+
+%define _disable_lto 1
+
 %define lname HandBrake
 
 Summary:	MPEG-AVC(H.264)/MPEG-4 converter
 Name:		handbrake
-Version:	1.4.2
+Version:	1.5.1
 Release:	1
 License:	GPLv2+
 Group:		Video
@@ -15,15 +18,16 @@ Source0:	https://download.handbrake.fr/releases/%{version}/%{lname}-%{version}-s
 # Handbrake switch from libav to ffmpeg, so replace it.
 # Use non-system ffmpeg, because currently we have 4.0.X, and needed is 4.1. (penguin)
 # as of 1.3.0 - bundle ffmpeg support more features than provided by omv.
-Source1:	ffmpeg-4.4.tar.bz2
+Source1:	ffmpeg-4.4.1.tar.bz2
 Source2:	libbluray-1.3.0.tar.bz2
 Source3:	libdvdnav-6.1.1.tar.bz2
 Source4:	libdvdread-6.1.1.tar.bz2
-#Source5:	libvpx-1.8.1.tar.gz
+Source5:	libvpx-1.11.0.tar.gz
 Source6:	x265_3.5.tar.gz
 #Source7:  nv-codec-headers-9.0.18.1.tar.gz
 Source8:  AMF-1.4.18.tar.gz
-Source9:  mfx_dispatch-1.35.tar.gz
+#Source9:  mfx_dispatch-1.35.tar.gz
+#Source10: https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs/oneVPL-2021.6.0.tar.gz
 
 # Source100 and patch0 for fix build on i686.
 #Source100:  linking-issue-on-non-x86-platform.patch
@@ -72,8 +76,11 @@ BuildRequires:	pkgconfig(x265)
 BuildRequires:  pkgconfig(ffnvcodec)
 BuildRequires:  pkgconfig(vpx)
 BuildRequires:  pkgconfig(libva)
-# Not packaged yet in OMV, until is still missing, we bundle it from handbrake
-#BuildRequires:  pkgconfig(libmfx)
+%ifnarch %arm %armx
+BuildRequires:  pkgconfig(libmfx)
+BuildRequires:  pkgconfig(igdgmm)
+BuildRequires:  pkgconfig(vpl)
+%endif
 BuildRequires:  pkgconfig(fdk-aac)
 
 %description
@@ -105,11 +112,12 @@ cp -t download %{SOURCE1}
 cp -t download %{SOURCE2}
 cp -t download %{SOURCE3}
 cp -t download %{SOURCE4}
-#cp -t download %{SOURCE5}
+cp -t download %{SOURCE5}
 cp -t download %{SOURCE6}
 #cp -t download %{SOURCE7}
 cp -t download %{SOURCE8}
-cp -t download %{SOURCE9}
+#cp -t download %{SOURCE9}
+#cp -t download %{SOURCE10}
 
 #import to fix i686 build
 #{__cp} -a %{SOURCE100} contrib/x265/A99-linking-issue-on-non-x86-platform.patch
@@ -117,7 +125,7 @@ cp -t download %{SOURCE9}
 %build
 # export CFLAGS="$RPM_OPT_FLAGS"
 # export CXXFLAGS="$RPM_OPT_FLAGS"
-./configure --prefix=%{_prefix} --launch --launch-jobs=0  --disable-gtk-update-checks --enable-vce --enable-qsv --enable-FDK-AAC
+./configure --prefix=%{_prefix} --launch --launch-jobs=0 --disable-gtk-update-checks --enable-vce --enable-qsv --enable-FDK-AAC
 
 pushd gtk
 autoreconf
