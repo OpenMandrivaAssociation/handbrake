@@ -79,7 +79,7 @@ BuildRequires:  pkgconfig(libva)
 %ifnarch %arm %armx
 BuildRequires:  pkgconfig(libmfx)
 BuildRequires:  pkgconfig(igdgmm)
-BuildRequires:  %{_lib}onevpl-devel
+BuildRequires:  pkgconfig(vpl)
 %endif
 BuildRequires:  pkgconfig(fdk-aac)
 
