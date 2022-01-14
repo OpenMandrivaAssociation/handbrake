@@ -115,9 +115,21 @@ cp -t download %{SOURCE8}
 #{__cp} -a %{SOURCE100} contrib/x265/A99-linking-issue-on-non-x86-platform.patch
 
 %build
-# export CFLAGS="$RPM_OPT_FLAGS"
-# export CXXFLAGS="$RPM_OPT_FLAGS"
-./configure --prefix=%{_prefix} --launch --launch-jobs=0 --disable-gtk-update-checks --enable-vce --enable-qsv --enable-FDK-AAC
+# VCE is AMD specific, QSV is Intel specific. Neither will work
+# on ARM or RISC-V.
+./configure \
+	--prefix=%{_prefix} \
+	--launch \
+	--launch-jobs=0 \
+	--disable-gtk-update-checks \
+%ifarch %{x86_64}
+	--enable-vce \
+	--enable-qsv \
+%else
+	--disable-vce \
+	--disable-qsv \
+%endif
+	--enable-FDK-AAC
 
 pushd gtk
 autoreconf
