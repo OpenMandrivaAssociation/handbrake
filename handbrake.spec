@@ -138,7 +138,8 @@ cp -t download %{SOURCE9}
 	--enable-fdk-aac
 
 pushd gtk
-autoreconf
+%meson
+%meson_build
 popd
 cd build && make
 
