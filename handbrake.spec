@@ -128,7 +128,6 @@ cp -t download %{SOURCE9}
 	--prefix=%{_prefix} \
 	--launch \
 	--launch-jobs=0 \
-	--disable-gtk-update-checks \
 %ifarch %{x86_64}
 	--enable-vce \
 	--enable-qsv \
