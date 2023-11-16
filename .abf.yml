@@ -1,11 +1,12 @@
 sources:
-  HandBrake-1.6.1-source.tar.bz2: b49e1dd34d6267632c694405d980a6b762cf8323
+  HandBrake-1.7.0-source.tar.bz2: 6fb1519af163fc6f1e4c78268a5473fbfb8dd00b
   libbluray-1.3.4.tar.bz2: 3bcf069bf113de0bca0be41e26fb68c2ea1a2029
   libdvdnav-6.1.1.tar.bz2: 7ac76aa95d046db715763da23b7053b65cbc7540
   libdvdread-6.1.3.tar.bz2: 5e5721ff6ed01a9af9214be0d6563303e8bf2bed
   x265_3.5.tar.gz: dc8e70f441991289a9a34fd37e1649d59435bfae
-  ffmpeg-5.1.2.tar.bz2: f5215c15ca50a43856f641c714c6070aa148dd66
+  ffmpeg-6.1.tar.bz2: 1b2c93bed564b31da4d76794ec317a6a54978ab1
   nv-codec-headers-11.0.11.1.tar.gz: 5b0b506840651c1fe7a2e7ddf5d090ec774f28a8
-  AMF-1.4.24.tar.gz: b32b2ca0a1291397fc409b9a978adb04de420ed2
+  AMF-1.4.30-slim.tar.gz: 066599782b89b3091de6c1b2c28603473a3259b0
   mfx_dispatch-1.35.tar.gz: 6eec28f8ea58f3e08b8c1e2779dfef11434d2ba3
   oneVPL-2023.1.0.tar.gz: 57a6d562e3c1f9de81dc221ac9e16d563c0e280b
+  dovi_tool-libdovi-3.2.0.tar.gz: 16d67ab327b44410f06a0a66973dd7fe7a7ed6b4
