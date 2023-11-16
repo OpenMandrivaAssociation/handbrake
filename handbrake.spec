@@ -66,6 +66,7 @@ BuildRequires:  pkgconfig(fdk-aac)
 BuildRequires:	pkgconfig(gstreamer-1.0)
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(gtk+-3.0)
+BuildRewuires:  pkgconfig(gtk4)
 BuildRequires:	pkgconfig(gudev-1.0)
 BuildRequires:  pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(opus)
@@ -138,7 +139,7 @@ cp -t download %{SOURCE9}
 	--enable-fdk-aac
 
 pushd gtk
-%meson
+%meson -Dgtk4=true
 %meson_build
 popd
 cd build && make
