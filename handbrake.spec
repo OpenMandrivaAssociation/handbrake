@@ -136,8 +136,7 @@ cp -t download %{SOURCE9}
 	--disable-vce \
 	--disable-qsv \
 %endif
-	--enable-fdk-aac \
- 	--enable-gtk4
+	--enable-fdk-aac
 
 #pushd gtk
 #meson -Dgtk4=true
