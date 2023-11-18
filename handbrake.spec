@@ -97,7 +97,7 @@ your computers, media centers, and portable electronic devices.
 %doc COPYING
 %{_bindir}/*
 %{_datadir}/applications/*
-%{_datadir}/icons/hicolor/*/apps/hb-icon.*
+#{_datadir}/icons/hicolor/*/apps/hb-icon.*
 %{_iconsdir}/hicolor/scalable/apps/fr.handbrake.ghb.svg
 %{_datadir}/metainfo/fr.handbrake.ghb.metainfo.xml
 
