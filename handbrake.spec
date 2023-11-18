@@ -136,12 +136,13 @@ cp -t download %{SOURCE9}
 	--disable-vce \
 	--disable-qsv \
 %endif
-	--enable-fdk-aac
+	--enable-fdk-aac \
+ 	--enable-gtk4
 
-pushd gtk
-%meson -Dgtk4=true
-%meson_build
-popd
+#pushd gtk
+#meson -Dgtk4=true
+#meson_build
+#popd
 cd build && make
 
 %install
