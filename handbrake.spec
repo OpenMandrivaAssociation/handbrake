@@ -8,21 +8,22 @@
 
 Summary:	MPEG-AVC(H.264)/MPEG-4 converter
 Name:		handbrake
-Version:	1.6.1
-Release:	2
+Version:	1.7.0
+Release:	1
 License:	GPLv2+
 Group:		Video
 Url:		http://handbrake.fr/
 Source0:	https://download.handbrake.fr/releases/%{version}/%{lname}-%{version}-source.tar.bz2
 
 # Handbrake switch from libav to ffmpeg, so replace it.
-# Use non-system ffmpeg, bc support more restricted features than provided by omv.
-Source1:	ffmpeg-5.1.2.tar.bz2
+# Use non-system ffmpeg, bc it support more restricted features than provided by omv.
+Source1:	ffmpeg-6.1.tar.bz2
 Source2:	libbluray-1.3.4.tar.bz2
 Source3:	libdvdnav-6.1.1.tar.bz2
 Source4:	libdvdread-6.1.3.tar.bz2
 Source6:	x265_3.5.tar.gz
-Source8:  	AMF-1.4.24.tar.gz
+Source8:  	AMF-1.4.30-slim.tar.gz
+Source9:	dovi_tool-libdovi-3.2.0.tar.gz
 
 # Source100 and patch0 for fix build on i686.
 #Source100:  linking-issue-on-non-x86-platform.patch
@@ -65,6 +66,7 @@ BuildRequires:  pkgconfig(fdk-aac)
 BuildRequires:	pkgconfig(gstreamer-1.0)
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(gtk+-3.0)
+BuildRequires:  pkgconfig(gtk4)
 BuildRequires:	pkgconfig(gudev-1.0)
 BuildRequires:  pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(opus)
@@ -95,7 +97,7 @@ your computers, media centers, and portable electronic devices.
 %doc COPYING
 %{_bindir}/*
 %{_datadir}/applications/*
-%{_datadir}/icons/hicolor/*/apps/hb-icon.*
+#{_datadir}/icons/hicolor/*/apps/hb-icon.*
 %{_iconsdir}/hicolor/scalable/apps/fr.handbrake.ghb.svg
 %{_datadir}/metainfo/fr.handbrake.ghb.metainfo.xml
 
@@ -115,6 +117,7 @@ cp -t download %{SOURCE3}
 cp -t download %{SOURCE4}
 cp -t download %{SOURCE6}
 cp -t download %{SOURCE8}
+cp -t download %{SOURCE9}
 
 #import to fix i686 build
 #{__cp} -a %{SOURCE100} contrib/x265/A99-linking-issue-on-non-x86-platform.patch
@@ -126,7 +129,6 @@ cp -t download %{SOURCE8}
 	--prefix=%{_prefix} \
 	--launch \
 	--launch-jobs=0 \
-	--disable-gtk-update-checks \
 %ifarch %{x86_64}
 	--enable-vce \
 	--enable-qsv \
@@ -136,9 +138,10 @@ cp -t download %{SOURCE8}
 %endif
 	--enable-fdk-aac
 
-pushd gtk
-autoreconf
-popd
+#pushd gtk
+#meson -Dgtk4=true
+#meson_build
+#popd
 cd build && make
 
 %install
