@@ -9,7 +9,7 @@
 Summary:	MPEG-AVC(H.264)/MPEG-4 converter
 Name:		handbrake
 Version:	1.7.2
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Video
 Url:		http://handbrake.fr/
@@ -22,7 +22,7 @@ Source2:	libbluray-1.3.4.tar.bz2
 Source3:	libdvdnav-6.1.1.tar.bz2
 Source4:	libdvdread-6.1.3.tar.bz2
 Source6:	x265_3.5.tar.gz
-Source8:  	AMF-1.4.30-slim.tar.gz
+#Source8:  	AMF-1.4.30-slim.tar.gz
 Source9:	dovi_tool-libdovi-3.2.0.tar.gz
 
 # Source100 and patch0 for fix build on i686.
@@ -44,6 +44,7 @@ BuildRequires:	yasm
 BuildRequires:	bzip2-devel
 BuildRequires:	lame-devel
 BuildRequires:  nasm
+BuildRequires:	amf-devel
 BuildRequires:  python-devel
 BuildRequires:  pkgconfig(jansson)
 #BuildRequires:  pkgconfig(gthread-2.0
@@ -116,7 +117,7 @@ cp -t download %{SOURCE2}
 cp -t download %{SOURCE3}
 cp -t download %{SOURCE4}
 cp -t download %{SOURCE6}
-cp -t download %{SOURCE8}
+#cp -t download %{SOURCE8}
 cp -t download %{SOURCE9}
 
 #import to fix i686 build
