@@ -8,8 +8,8 @@
 
 Summary:	MPEG-AVC(H.264)/MPEG-4 converter
 Name:		handbrake
-Version:	1.7.3
-Release:	2
+Version:	1.8.0
+Release:	1
 License:	GPLv2+
 Group:		Video
 Url:		http://handbrake.fr/
@@ -21,7 +21,7 @@ Source0:	https://download.handbrake.fr/releases/%{version}/%{lname}-%{version}-s
 Source2:	libbluray-1.3.4.tar.bz2
 Source3:	libdvdnav-6.1.1.tar.bz2
 Source4:	libdvdread-6.1.3.tar.bz2
-Source6:	x265_3.5.tar.gz
+Source6:	x265_3.6.tar.gz
 #Source8:  	AMF-1.4.30-slim.tar.gz
 Source9:	dovi_tool-libdovi-3.2.0.tar.gz
 
@@ -66,7 +66,7 @@ BuildRequires:  pkgconfig(numa)
 BuildRequires:  pkgconfig(fdk-aac)
 BuildRequires:	pkgconfig(gstreamer-1.0)
 BuildRequires:	pkgconfig(dbus-glib-1)
-BuildRequires:	pkgconfig(gtk+-3.0)
+#BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:  pkgconfig(gtk4)
 BuildRequires:	pkgconfig(gudev-1.0)
 BuildRequires:  pkgconfig(libxml-2.0)
