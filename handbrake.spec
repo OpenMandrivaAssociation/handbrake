@@ -8,11 +8,11 @@
 
 Summary:	MPEG-AVC(H.264)/MPEG-4 converter
 Name:		handbrake
-Version:	1.8.0
+Version:	1.8.1
 Release:	1
 License:	GPLv2+
 Group:		Video
-Url:		http://handbrake.fr/
+Url:		https://handbrake.fr/
 Source0:	https://download.handbrake.fr/releases/%{version}/%{lname}-%{version}-source.tar.bz2
 
 # Handbrake switch from libav to ffmpeg, so replace it.
@@ -48,7 +48,7 @@ BuildRequires:	amf-devel
 BuildRequires:  python-devel
 BuildRequires:  pkgconfig(jansson)
 #BuildRequires:  pkgconfig(gthread-2.0
-#BuildRequires:	ffmpeg-devel
+BuildRequires:	ffmpeg-devel
 BuildRequires:	pkgconfig(freetype2)
 BuildRequires:	pkgconfig(fribidi)
 #BuildRequires:	pkgconfig(gstreamer-%{gstapi})
