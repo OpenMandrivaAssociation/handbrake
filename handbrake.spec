@@ -1,6 +1,4 @@
-#define _enable_debug_packages %{nil}
-#define debug_package %{nil}
-%define _empty_manifest_terminate_build 0
+%undefine _debugsource_packages
 
 %define _disable_lto 1
 
@@ -21,9 +19,9 @@ Source0:	https://download.handbrake.fr/releases/%{version}/%{lname}-%{version}-s
 Source2:	libbluray-1.3.4.tar.bz2
 Source3:	libdvdnav-6.1.1.tar.bz2
 Source4:	libdvdread-6.1.3.tar.bz2
-Source6:	x265_3.6.tar.gz
+#Source6:	x265_3.6.tar.gz
 #Source8:  	AMF-1.4.30-slim.tar.gz
-Source9:	dovi_tool-libdovi-3.2.0.tar.gz
+#Source9:	dovi_tool-libdovi-3.2.0.tar.gz
 
 # Source100 and patch0 for fix build on i686.
 #Source100:  linking-issue-on-non-x86-platform.patch
@@ -81,6 +79,7 @@ BuildRequires:	pkgconfig(x265)
 BuildRequires:  pkgconfig(ffnvcodec)
 BuildRequires:  pkgconfig(vpx)
 BuildRequires:  pkgconfig(libva)
+BuildRequires:  pkgconfig(dovi)
 %ifnarch %arm %armx
 BuildRequires:  pkgconfig(libmfx)
 BuildRequires:  pkgconfig(igdgmm)
@@ -116,9 +115,9 @@ mkdir download
 cp -t download %{SOURCE2}
 cp -t download %{SOURCE3}
 cp -t download %{SOURCE4}
-cp -t download %{SOURCE6}
+#cp -t download %{SOURCE6}
 #cp -t download %{SOURCE8}
-cp -t download %{SOURCE9}
+#cp -t download %{SOURCE9}
 
 #import to fix i686 build
 #{__cp} -a %{SOURCE100} contrib/x265/A99-linking-issue-on-non-x86-platform.patch
