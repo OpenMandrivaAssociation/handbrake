@@ -107,6 +107,7 @@ your computers, media centers, and portable electronic devices.
 
 %prep
 %setup -q -n %{lname}-%{version}
+%autopatch -p1
 #ifarch %ix86
 #patch0 -p1 -b .x265-no-10bit-12bit
 #endif
