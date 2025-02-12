@@ -27,7 +27,7 @@ Source4:	libdvdread-6.1.3.tar.bz2
 #Source100:  linking-issue-on-non-x86-platform.patch
 #Patch0: 0001-Don-t-build-x265-10-12bit.patch
 
-Patch0:		https://github.com/HandBrake/HandBrake/commit/855f51bfb392cb122a7b188877b475e3b5baddde.patch
+#Patch0:		https://github.com/HandBrake/HandBrake/commit/855f51bfb392cb122a7b188877b475e3b5baddde.patch
 
 BuildRequires:  meson
 BuildRequires:  autoconf
