@@ -97,6 +97,7 @@ BuildRequires:  pkgconfig(ffnvcodec)
 BuildRequires:  pkgconfig(vpx)
 BuildRequires:  pkgconfig(libva)
 BuildRequires:  pkgconfig(dovi)
+BuildRequires:	desktop-file-utils
 %ifnarch %arm %armx
 BuildRequires:  pkgconfig(libmfx)
 BuildRequires:  pkgconfig(igdgmm)
