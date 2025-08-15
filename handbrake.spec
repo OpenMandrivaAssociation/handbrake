@@ -98,6 +98,7 @@ BuildRequires:  pkgconfig(vpx)
 BuildRequires:  pkgconfig(libva)
 BuildRequires:  pkgconfig(dovi)
 BuildRequires:	desktop-file-utils
+BuildRequires:	appstream
 %ifnarch %arm %armx
 BuildRequires:  pkgconfig(libmfx)
 BuildRequires:  pkgconfig(igdgmm)
