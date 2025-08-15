@@ -11,7 +11,7 @@ Release:	1
 License:	GPLv2+
 Group:		Video
 Url:		https://handbrake.fr/
-Source0:	https://github.com/HandBrake/HandBrake/archive/%{version}/%{name}-%{version}.tar.gz
+Source0:	https://github.com/HandBrake/HandBrake/releases/download/%{version}/%{lname}-%{version}-source.tar.bz2
 
 # Would not download 1.10.0 release
 # https://download.handbrake.fr/releases/%{version}/%{lname}-%{version}-source.tar.bz2
