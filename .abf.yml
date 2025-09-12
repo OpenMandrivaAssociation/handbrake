@@ -13,4 +13,5 @@ sources:
   v2.15.0.tar.gz: ae18a22465f1577e528ad50f31a5d0d28dbaadc1
   x265-snapshot-20250729-13276.tar.gz: 0da4ede4ec3c6fa90818011fc07c9945e6fd1569
   zimg-snapshot-20250624.tar.gz: 0812f068a82a4657b67eeed31d5b33eb7a91736e
-  HandBrake-1.10.1-source.tar.bz2: ae92f6651aae3b9dbdf618c4437ed7a21747bdb3
+  HandBrake-1.10.2-source.tar.bz2: 1116a142941ecfc4ca9fcb7cac6e61988be1d593
+  ffmpeg-8.0.tar.bz2: 0d39e9c065c80b14c92f1e6f3e96e5c46af1dd5c
