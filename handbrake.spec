@@ -27,7 +27,7 @@ Source3:	libdvdnav-6.1.1.tar.bz2
 Source4:	libdvdread-6.1.3.tar.bz2
 Source5:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs/fdk-aac-2.0.3.tar.gz
 Source6:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/dav1d-1.5.1.tar.bz2
-Source7:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/ffmpeg-8.0.tar.bz2
+Source7:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/ffmpeg-7.1.1.tar.bz2
 Source8:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/SVT-AV1-v3.1.0.tar.gz
 Source9:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/zimg-snapshot-20250624.tar.gz
 Source10:	https://github.com/intel/libvpl/archive/refs/tags/v2.15.0.tar.gz
