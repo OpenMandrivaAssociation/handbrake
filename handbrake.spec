@@ -1,13 +1,11 @@
 %undefine _debugsource_packages
 
-%define _disable_lto 1
-
 %define lname HandBrake
 
 Summary:	MPEG-AVC(H.264)/MPEG-4 converter
 Name:		handbrake
 Version:	1.10.2
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Video
 Url:		https://handbrake.fr/
