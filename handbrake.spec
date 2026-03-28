@@ -42,6 +42,7 @@ Source13:	https://github.com/FFmpeg/nv-codec-headers/releases/download/n13.0.19.
 
 #Patch0:		https://github.com/HandBrake/HandBrake/commit/855f51bfb392cb122a7b188877b475e3b5baddde.patch
 
+BuildRequires:	make
 BuildRequires:	libtool-base
 BuildRequires:	slibtool
 BuildRequires:  meson
