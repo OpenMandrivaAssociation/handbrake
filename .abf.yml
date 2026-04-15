@@ -4,14 +4,13 @@ sources:
   libdvdread-6.1.3.tar.bz2: 5e5721ff6ed01a9af9214be0d6563303e8bf2bed
   mfx_dispatch-1.35.tar.gz: 6eec28f8ea58f3e08b8c1e2779dfef11434d2ba3
   oneVPL-2023.1.0.tar.gz: 57a6d562e3c1f9de81dc221ac9e16d563c0e280b
-  AMF-1.4.36-slim.tar.gz: e47f18cb8d4e53b3414e2ba4d4032f39eda7c87a
-  dav1d-1.5.1.tar.bz2: e731f67b23d5919a35eef2e2ce73b9bae6863621
+  AMF-headers-v1.5.0.tar.gz: e0a9bde8e873d365180a859b61ceedb865e5eadb
+  dav1d-1.5.3.tar.bz2: 2a88df5b67e7b29c05fd90db9b6f52385b13612f
   fdk-aac-2.0.3.tar.gz: a7f42c67c0b82cdb2cd773d3ec31042fb5647c0d
-  ffmpeg-7.1.1.tar.bz2: 37a47e0db54dcba42762610e37a22319763345b0
   nv-codec-headers-13.0.19.0.tar.gz: 00d4b6b4b5cc90680047e1efd669f33f6c137663
-  SVT-AV1-v3.1.2.tar.gz: ae7ae58cc849e389e5d5deacfa1e4c5258e7202b
-  v2.15.0.tar.gz: ae18a22465f1577e528ad50f31a5d0d28dbaadc1
-  x265-snapshot-20250729-13276.tar.gz: 0da4ede4ec3c6fa90818011fc07c9945e6fd1569
+  SVT-AV1-v4.0.1.tar.gz: e6e781e45a4f13a9ee7a780ce437f9038da3813e
+  libvpl-2.16.0.tar.gz: a982cad80ead5fbeca2e00d99613d7443e7fda85
+  x265-snapshot-20260216-13309.tar.gz: 6f683a536c08a798cb39e66e0cd8a262f634fe28
   zimg-snapshot-20250624.tar.gz: 0812f068a82a4657b67eeed31d5b33eb7a91736e
-  HandBrake-1.10.2-source.tar.bz2: 1116a142941ecfc4ca9fcb7cac6e61988be1d593
-  ffmpeg-8.0.tar.bz2: 0d39e9c065c80b14c92f1e6f3e96e5c46af1dd5c
+  HandBrake-1.11.1-source.tar.bz2: c80b23034c277f35a3f73b56017033eb824c47a6
+  ffmpeg-8.0.1.tar.bz2: c2f6d5fcbd3068c1c8b5af867dfa6809c456e6b4
