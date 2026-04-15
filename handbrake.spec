@@ -18,11 +18,11 @@ Source0:	https://github.com/HandBrake/HandBrake/releases/download/%{version}/%{l
 # Use non-system ffmpeg, bc it support more restricted features than provided by omv.
 #Source1:	ffmpeg-6.1.tar.bz2
 # Source link https://code.videolan.org/videolan/libbluray/-/tags
-Source2:	libbluray-1.3.4.tar.bz2
+Source2:	libbluray-1.4.0.tar.bz2
 # Source https://code.videolan.org/videolan/libdvdnav
-Source3:	libdvdnav-6.1.1.tar.bz2
+Source3:	libdvdnav-7.0.0.tar.bz2
 # Source https://code.videolan.org/videolan/libdvdread
-Source4:	libdvdread-6.1.3.tar.bz2
+Source4:	libdvdread-7.0.1.tar.bz2
 Source5:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs/fdk-aac-2.0.3.tar.gz
 Source6:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/dav1d-1.5.3.tar.bz2
 Source7:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/ffmpeg-8.0.1.tar.bz2
