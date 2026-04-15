@@ -4,8 +4,8 @@
 
 Summary:	MPEG-AVC(H.264)/MPEG-4 converter
 Name:		handbrake
-Version:	1.10.2
-Release:	3
+Version:	1.11.1
+Release:	1
 License:	GPLv2+
 Group:		Video
 Url:		https://handbrake.fr/
@@ -24,13 +24,13 @@ Source3:	libdvdnav-6.1.1.tar.bz2
 # Source https://code.videolan.org/videolan/libdvdread
 Source4:	libdvdread-6.1.3.tar.bz2
 Source5:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs/fdk-aac-2.0.3.tar.gz
-Source6:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/dav1d-1.5.1.tar.bz2
-Source7:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/ffmpeg-7.1.1.tar.bz2
-Source8:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/SVT-AV1-v3.1.2.tar.gz
+Source6:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/dav1d-1.5.3.tar.bz2
+Source7:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/ffmpeg-8.0.1.tar.bz2
+Source8:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/SVT-AV1-v4.0.1.tar.gz
 Source9:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/zimg-snapshot-20250624.tar.gz
-Source10:	https://github.com/intel/libvpl/archive/refs/tags/v2.15.0.tar.gz
-Source11:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/x265-snapshot-20250729-13276.tar.gz
-Source12:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/AMF-1.4.36-slim.tar.gz
+Source10:	https://github.com/intel/libvpl/archive/refs/tags/libvpl-2.16.0.tar.gz
+Source11:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/x265-snapshot-20260216-13309.tar.gz
+Source12:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/AMF-headers-v1.5.0.tar.gz
 Source13:	https://github.com/FFmpeg/nv-codec-headers/releases/download/n13.0.19.0/nv-codec-headers-13.0.19.0.tar.gz
 #Source101:	x265_3.6.tar.gz
 #Source102:  	AMF-1.4.30-slim.tar.gz
@@ -142,10 +142,10 @@ cp -t download %{SOURCE7}
 cp -t download %{SOURCE8}
 cp -t download %{SOURCE9}
 cp -t download %{SOURCE10}
-mv download/v2.15.0.tar.gz download/libvpl-2.15.0.tar.gz
+#mv download/v2.15.0.tar.gz download/libvpl-2.15.0.tar.gz
 cp -t download %{SOURCE11}
 cp -t download %{SOURCE12}
-mv download/AMF-1.4.36-slim.tar.gz download/AMF-1.4.36.0.tar.gz
+#mv download/AMF-1.4.36-slim.tar.gz download/AMF-1.4.36.0.tar.gz
 cp -t download %{SOURCE13}
 
 #import to fix i686 build
