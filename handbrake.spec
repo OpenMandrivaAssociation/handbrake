@@ -1,12 +1,12 @@
-%undefine _debugsource_packages
+%global debug_package %{nil}
 
 %define lname HandBrake
 
 Summary:	MPEG-AVC(H.264)/MPEG-4 converter
 Name:		handbrake
-Version:	1.10.2
-Release:	3
-License:	GPLv2+
+Version:	1.11.2
+Release:	1
+License:	GPL-2.0-or-later
 Group:		Video
 Url:		https://handbrake.fr/
 Source0:	https://github.com/HandBrake/HandBrake/releases/download/%{version}/%{lname}-%{version}-source.tar.bz2
@@ -18,20 +18,22 @@ Source0:	https://github.com/HandBrake/HandBrake/releases/download/%{version}/%{l
 # Use non-system ffmpeg, bc it support more restricted features than provided by omv.
 #Source1:	ffmpeg-6.1.tar.bz2
 # Source link https://code.videolan.org/videolan/libbluray/-/tags
-Source2:	libbluray-1.3.4.tar.bz2
+#Source2:	https://code.videolan.org/videolan/libbluray/-/archive/1.4.0/libbluray-1.4.0.tar.bz2
 # Source https://code.videolan.org/videolan/libdvdnav
-Source3:	libdvdnav-6.1.1.tar.bz2
+Source3:	https://code.videolan.org/videolan/libdvdnav/-/archive/7.0.0/libdvdnav-7.0.0.tar.bz2
 # Source https://code.videolan.org/videolan/libdvdread
-Source4:	libdvdread-6.1.3.tar.bz2
+Source4:	https://code.videolan.org/videolan/libdvdread/-/archive/7.0.1/libdvdread-7.0.1.tar.bz2
 Source5:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs/fdk-aac-2.0.3.tar.gz
-Source6:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/dav1d-1.5.1.tar.bz2
-Source7:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/ffmpeg-7.1.1.tar.bz2
-Source8:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/SVT-AV1-v3.1.2.tar.gz
+Source6:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/dav1d-1.5.3.tar.bz2
+Source7:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/ffmpeg-8.0.2.tar.bz2
+Source8:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/SVT-AV1-v4.1.0.tar.gz
 Source9:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/zimg-snapshot-20250624.tar.gz
-Source10:	https://github.com/intel/libvpl/archive/refs/tags/v2.15.0.tar.gz
-Source11:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/x265-snapshot-20250729-13276.tar.gz
+Source10:	https://github.com/intel/libvpl/archive/refs/tags/v2.16.0.tar.gz
+Source11:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/x265-snapshot-20260216-13309.tar.gz
 Source12:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/AMF-1.4.36-slim.tar.gz
 Source13:	https://github.com/FFmpeg/nv-codec-headers/releases/download/n13.0.19.0/nv-codec-headers-13.0.19.0.tar.gz
+Source14:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/AMF-headers-v1.5.0.tar.gz
+Source15:	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs2/libbluray-1.4.0.tar.xz
 #Source101:	x265_3.6.tar.gz
 #Source102:  	AMF-1.4.30-slim.tar.gz
 #Source103:	dovi_tool-libdovi-3.2.0.tar.gz
@@ -43,19 +45,20 @@ Source13:	https://github.com/FFmpeg/nv-codec-headers/releases/download/n13.0.19.
 #Patch0:		https://github.com/HandBrake/HandBrake/commit/855f51bfb392cb122a7b188877b475e3b5baddde.patch
 
 BuildRequires:	make
+BuildRequires:	devel(libatomic)
 BuildRequires:	libtool-base
 BuildRequires:	slibtool
 BuildRequires:  meson
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:	cmake
-BuildRequires:	intltool
+#BuildRequires:	intltool
 BuildRequires:  libtool
 BuildRequires:  m4
 BuildRequires:	iso-codes
 BuildRequires:	libtool
-BuildRequires:	svn
-BuildRequires:	valgrind
+#BuildRequires:	svn
+#BuildRequires:	valgrind
 BuildRequires:	yasm
 BuildRequires:	bzip2-devel
 BuildRequires:	lame-devel
@@ -64,7 +67,7 @@ BuildRequires:	amf-devel
 BuildRequires:  python-devel
 BuildRequires:  pkgconfig(jansson)
 #BuildRequires:  pkgconfig(gthread-2.0
-BuildRequires:	ffmpeg-devel
+#BuildRequires:	ffmpeg-devel
 BuildRequires:	pkgconfig(freetype2)
 BuildRequires:	pkgconfig(fribidi)
 #BuildRequires:	pkgconfig(gstreamer-%{gstapi})
@@ -72,14 +75,14 @@ BuildRequires:	pkgconfig(gstreamer-plugins-base-1.0)
 BuildRequires:	pkgconfig(harfbuzz)
 BuildRequires:	pkgconfig(theora)
 BuildRequires:	pkgconfig(libass)
-BuildRequires:	pkgconfig(dav1d)
+#BuildRequires:	pkgconfig(dav1d)
 BuildRequires:  pkgconfig(libdrm)
 BuildRequires:	pkgconfig(libnotify)
 BuildRequires:  pkgconfig(liblzma)
 BuildRequires:	pkgconfig(speex)
 BuildRequires:	pkgconfig(libturbojpeg)
 BuildRequires:  pkgconfig(numa)
-BuildRequires:  pkgconfig(fdk-aac)
+#BuildRequires:  pkgconfig(fdk-aac)
 BuildRequires:	pkgconfig(gstreamer-1.0)
 BuildRequires:	pkgconfig(dbus-glib-1)
 #BuildRequires:	pkgconfig(gtk+-3.0)
@@ -88,12 +91,12 @@ BuildRequires:	pkgconfig(gudev-1.0)
 BuildRequires:  pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(opus)
 BuildRequires:  pkgconfig(speex)
-BuildRequires:	pkgconfig(SvtAv1Enc)
+#BuildRequires:	pkgconfig(SvtAv1Enc)
 BuildRequires:	pkgconfig(vorbis)
 BuildRequires:	pkgconfig(samplerate)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	pkgconfig(x264)
-BuildRequires:	pkgconfig(x265)
+#BuildRequires:	pkgconfig(x265)
 BuildRequires:  pkgconfig(ffnvcodec)
 BuildRequires:  pkgconfig(vpx)
 BuildRequires:  pkgconfig(libva)
@@ -133,7 +136,7 @@ your computers, media centers, and portable electronic devices.
 find . -name "Makefile*" -o -name "*.m4" |xargs sed -i -e 's,configure.in,configure.ac,g'
 mkdir download
 #cp -t download %{SOURCE1}
-cp -t download %{SOURCE2}
+#cp -t download %{SOURCE2}
 cp -t download %{SOURCE3}
 cp -t download %{SOURCE4}
 cp -t download %{SOURCE5}
@@ -142,12 +145,13 @@ cp -t download %{SOURCE7}
 cp -t download %{SOURCE8}
 cp -t download %{SOURCE9}
 cp -t download %{SOURCE10}
-mv download/v2.15.0.tar.gz download/libvpl-2.15.0.tar.gz
+mv download/v2.16.0.tar.gz download/libvpl-2.16.0.tar.gz
 cp -t download %{SOURCE11}
 cp -t download %{SOURCE12}
 mv download/AMF-1.4.36-slim.tar.gz download/AMF-1.4.36.0.tar.gz
 cp -t download %{SOURCE13}
-
+cp -t download %{SOURCE14}
+cp -t download %{SOURCE15}
 #import to fix i686 build
 #{__cp} -a %{SOURCE100} contrib/x265/A99-linking-issue-on-non-x86-platform.patch
 
