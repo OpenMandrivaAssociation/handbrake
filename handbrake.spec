@@ -103,6 +103,7 @@ BuildRequires:  pkgconfig(libva)
 BuildRequires:  pkgconfig(dovi)
 BuildRequires:	desktop-file-utils
 BuildRequires:	appstream
+BuildRequires:	gettext
 %ifnarch %arm %armx
 BuildRequires:  pkgconfig(libmfx)
 BuildRequires:  pkgconfig(igdgmm)
